@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Welcome from './Welcome'
+import './App.scss'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+export default function App() {
+    const [ point, setPoint ] = React.useState([0,0])
+
+    return (
+        <div
+            className="w-100 h-100 position-relative"
+            onMouseMove={e => {
+                setPoint([e.clientX, e.clientY])
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <Welcome point={point} />
+        </div>
+    )
 }
-
-export default App;
