@@ -8,7 +8,7 @@ export default function App() {
     const [ visible , setVisible ] = React.useState(true)
 
     let user = {
-        name: 'brandon',
+        name: 'Brandon Navarro',
         password: 'password'
     }
 
